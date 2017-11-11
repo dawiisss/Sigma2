@@ -11,6 +11,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCeaEA-jjz_MQWbomfVO2tr-2ce-jK_H94",
+    authDomain: "sigma2-3a514.firebaseapp.com",
+    databaseURL: "https://sigma2-3a514.firebaseio.com",
+    projectId: "sigma2-3a514",
+    storageBucket: "sigma2-3a514.appspot.com",
+    messagingSenderId: "883508389920"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,6 +35,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -34,7 +51,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}
