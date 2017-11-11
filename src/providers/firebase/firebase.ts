@@ -7,8 +7,8 @@ export class FirebaseProvider {
   constructor(public afd: AngularFireDatabase) {
   }
 
-  getCruiseList() {
-    return this.afd.list('/cruises');
+  getItineraryList() {
+    return this.afd.list('/itineraries');
   }
 
 }

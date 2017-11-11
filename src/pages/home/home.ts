@@ -9,10 +9,10 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  cruiseList: FirebaseListObservable<any[]>;
+  itineraryList: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController,  public firebaseProvider: FirebaseProvider) {
-    this.cruiseList = this.firebaseProvider.getCruiseList();
+    this.itineraryList = this.firebaseProvider.getItineraryList();
   }
 
 }
