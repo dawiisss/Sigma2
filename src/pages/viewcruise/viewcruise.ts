@@ -12,7 +12,7 @@ export class ViewCruise {
   cruiseList: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController,  public firebaseProvider: FirebaseProvider) {
-    this.cruiseList = this.firebaseProvider.getCruiseList();
+    //this.cruiseList = this.firebaseProvider.getCruiseList();
   }
 
 }
