@@ -5,14 +5,14 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-viewcruise',
+  templateUrl: 'viewcruise.html'
 })
 export class ViewCruise {
   cruiseList: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController,  public firebaseProvider: FirebaseProvider) {
-    this.cruiseList = this.firebaseProvider.getCruiseList();
+    //this.cruiseList = this.firebaseProvider.getCruiseList();
   }
 
 }
